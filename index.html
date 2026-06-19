@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Analyzer</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Resume Upload -->
+    <div class="card">
+        <h2>Resume Upload</h2>
+
+        <div class="upload-box" id="dropZone">
+            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" hidden>
+            <div class="upload-icon">⬆</div>
+            <p>Drop your resume here</p>
+            <span>or click to upload</span>
+        </div>
+
+        <div class="file-name" id="fileName">No file selected</div>
+
+        <button class="upload-btn" id="uploadBtn">Upload Resume</button>
+
+        <div class="formats">
+            <span>PDF</span>
+            <span>DOCX</span>
+            <span>TXT</span>
+            <span>DOC</span>
+        </div>
+    </div>
+
+    <!-- JD -->
+    <div class="card">
+        <h2>Job Description</h2>
+
+        <textarea
+            id="jobDesc"
+            class="jd-box"
+            placeholder="Paste the job description here..."
+        ></textarea>
+
+        <button id="analyzeBtn">Analyze Resume</button>
+
+        <p class="info">
+            Upload a resume and paste a job description to get started
+        </p>
+    </div>
+
+    <!-- Generated Resume -->
+    <div class="card">
+        <h2>AI Generated Resume</h2>
+
+        <div class="generated-box" id="generatedResume">
+            Your optimized resume will appear here...
+        </div>
+
+        <button class="download-btn" id="downloadBtn">
+            Download as PDF
+        </button>
+    </div>
+
+</div>
+
+<!-- Recommended Jobs -->
+<div class="jobs-section">
+    <h2>Recommended Jobs</h2>
+    <p>Jobs matched based on your AI-generated resume.</p>
+    <div class="jobs-box" id="jobsBox">
+        <h3>Jobs will appear here after analysis</h3>
+        <p>We'll fetch the best matching jobs using LinkedIn, Instahyre and JSearch API.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
